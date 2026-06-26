@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
 @import "tailwindcss";
 
 * {
@@ -11,6 +13,17 @@ html {
 body {
   margin: 0;
   background: #020617;
-  color: white;
-  font-family: Inter, system-ui, sans-serif;
+  color: #f8fafc;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Sora", system-ui, sans-serif;
+}
+
+::selection {
+  background: #38bdf8;
+  color: #020617;
 }
