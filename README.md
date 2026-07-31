@@ -2,7 +2,6 @@
 
 A production-ready personal portfolio website built with **React + Vite**, **Tailwind CSS**, **Node.js**, **Express.js**, **MongoDB Atlas (Mongoose)**, **Cloudinary** and **Framer Motion**. Includes a floating AI chatbot, smooth scrolling, page transitions, premium dark design and a full **Admin Dashboard** at /admin.
 
-Inspired by the look, feel and interactions of [pszostak.pl](https://www.pszostak.pl/) (original code & assets are NOT copied — everything here is original and powered by my own content/resume).
 
 ## Features
 
