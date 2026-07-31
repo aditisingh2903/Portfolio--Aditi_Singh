@@ -1,0 +1,50 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: #08080c;
+  color: #f5f4ff;
+  font-family: Inter, system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #08080c; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#7c5cff, #22d3ee); border-radius: 8px; }
+
+@layer components {
+  .section-pad { @apply px-5 sm:px-8 md:px-16 lg:px-24 py-24 md:py-36; }
+  .glass { @apply bg-white/[0.04] backdrop-blur-xl border border-white/10; }
+  .glass-soft { @apply bg-white/[0.02] border border-white/[0.06]; }
+  .grad-text { @apply bg-gradient-to-r from-accent via-accent-cyan to-accent-pink bg-clip-text text-transparent; }
+  .out-text { @apply text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.18)]; }
+  .btn-magnetic { @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-white shadow-glow; }
+  .btn-ghost { @apply inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-medium text-white/80 transition hover:border-accent hover:text-white; }
+  .chip { @apply rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-white/70; }
+  .card { @apply glass rounded-2xl transition-transform duration-300; }
+  .num-label { @apply font-mono text-xs uppercase tracking-[0.3em] text-accent/70; }
+}
+.glow-orb {
+  position: absolute; border-radius: 9999px; filter: blur(80px); opacity: 0.5; pointer-events: none;
+}
+.grid-bg {
+  background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.gradient-mesh {
+  background:
+    radial-gradient(60rem 40rem at 12% -10%, rgba(124,92,255,0.22), transparent 60%),
+    radial-gradient(50rem 36rem at 100% 0%, rgba(34,211,238,0.16), transparent 55%),
+    radial-gradient(46rem 34rem at 50% 120%, rgba(255,93,177,0.14), transparent 60%),
+    #08080c;
+}
+.mask-fade-x { mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent); }
+.noise::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.06; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

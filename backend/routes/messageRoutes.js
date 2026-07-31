@@ -1,0 +1,11 @@
+﻿import { Router } from 'express';
+import { body } from 'express-validator';
+import { list, create, markRead, remove } from '../controllers/messageController.js';
+import { protect } from '../middleware/authMiddleware.js';
+import { validate } from '../middleware/validate.js';
+const router = Router();
+router.get('/', protect, list);
+router.post('/', [body('email').isEmail(), body('message').trim().isLength({ min: 3 })], validate, create);
+router.put('/:id/read', protect, markRead);
+router.delete('/:id', protect, remove);
+export default router;

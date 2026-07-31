@@ -1,0 +1,12 @@
+﻿{
+  "version": 2,
+  "buildCommand": "npm --prefix frontend install && npm --prefix frontend run build && npm --prefix backend install",
+  "outputDirectory": "frontend/dist",
+  "functions": {
+    "backend/server.js": { "runtime": "node" }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/backend/server.js" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
